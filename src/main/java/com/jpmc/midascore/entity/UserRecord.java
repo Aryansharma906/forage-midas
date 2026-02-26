@@ -39,6 +39,10 @@ public class UserRecord {
     public float getBalance() {
         return balance;
     }
+    
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
 
     public void setBalance(float balance) {
         this.balance = balance;
