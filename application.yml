@@ -1,3 +1,6 @@
+server:
+  port: 33400
+
 general:
   kafka-topic: transactions
 
@@ -26,4 +29,5 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+
 
