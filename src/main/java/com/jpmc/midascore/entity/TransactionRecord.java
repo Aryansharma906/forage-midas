@@ -25,7 +25,7 @@ public class TransactionRecord {
     
     protected TransactionRecord() {}
     
-    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount), float incentive {
+    public TransactionRecord(UserRecord sender, UserRecord recipient, float amount, float incentive) {
         this.sender = sender;
         this.recipient = recipient;
         this.amount = amount;
