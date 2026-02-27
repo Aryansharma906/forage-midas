@@ -13,16 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class BalanceController {
 
     @Autowired
-    private UserRecordRepository UserRecordRepository;
+    private UserRecordRepository userRecordRepository;
 
     @GetMapping("/balance")
     public Balance getBalance(@RequestParam("userId") Long userId) {
-        UserRecord userRecord = UserRecordRepository.findById(userId);
-        
-        if (userRecord != null) {
-            return new Balance(userRecord.getBalance());
-        } else {
-            return new Balance(0.0f);
-        }
+        return userRecordRepository.findById(userId)
+            .map(userRecord -> new Balance(userRecord.getBalance()))
+            .orElse(new Balance(0.0f));
     }
 }
